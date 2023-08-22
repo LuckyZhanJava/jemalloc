@@ -9,7 +9,6 @@ public class UnpooledByteBuf implements ByteBuf {
   private int length;
   private int readerIndex;
   private int writerIndex;
-  private long runId;
   private boolean released;
 
   public UnpooledByteBuf(Chunk chunk){
@@ -46,7 +45,6 @@ public class UnpooledByteBuf implements ByteBuf {
   public void release(){
     synchronized (this){
       if(!released){
-        chunk.release(runId);
         released = true;
       }
     }

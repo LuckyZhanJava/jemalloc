@@ -23,6 +23,7 @@ public class App {
     for (int i = 0; i < 2048; i++) {
       //ByteBuf byteBuf = allocator.alloc(4);
       ByteBuf byteBuf = allocator.alloc(40960);
+      byteBuf.release();
       //ByteBuffer byteBuf = ByteBuffer.allocateDirect(40960);
       //byteBuf.writeByte((byte) 1);
     }
